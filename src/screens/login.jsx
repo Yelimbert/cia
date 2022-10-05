@@ -16,7 +16,7 @@ const LoginScreen = () => {
         <input type="email" className="input_email" placeholder="  ID" />
         <input type="password" className="input_email" placeholder="  Password" />
         <button type="button" className="login_button">Log In</button>
-        <button type="button" className="signup_button">Sign Up</button>
+        <button type="button"  className="signup_button">Sign Up</button>
       </div>
     </div>
   );
