@@ -1,9 +1,13 @@
 const express = require("express");
 const mysql = require("mysql");
+const cors = require("cors");
 
 const app = express();
 
+
 app.use(express.json());
+app.use(cors());
+
 
 const db = mysql.createConnection({
     user: "root",
@@ -12,7 +16,7 @@ const db = mysql.createConnection({
     database: "cia",
 });
 
-app.post('/', (req, res)=> {
+app.post('/login', (req, res)=> {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -33,6 +37,6 @@ app.post('/', (req, res)=> {
     );
 })
 
-app.listen(5000, () => {
+app.listen(3001, () => {
     console.log("running server");
 });
