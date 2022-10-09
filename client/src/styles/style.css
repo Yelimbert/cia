@@ -1,4 +1,4 @@
-* {
+.container {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -44,7 +44,7 @@
 h1 {
     text-align: center;
     justify-content: center;
-    color: whitesmoke;
+    color: black;
     z-index: 10;
     font-size: 80px;
 }
