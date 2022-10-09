@@ -28,7 +28,7 @@ app.post('/login', (req, res)=> {
                 res.send({err: err})
             }
 
-            if(result) {
+            else if(result) {
                 res.send(result)
             } else {
                 res.send({message: "Usuario/contrasena incorrecta!"})
