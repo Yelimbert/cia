@@ -7,7 +7,7 @@ const UserLoggedPage = () => {
       <div className="menu-container">
         <div className="menu">
           <div className="logo-container">
-            <img className="intec" src="./icons/intec.png"/>
+            <img className="intec" src="./icons/intec.png" alt=""/>
               <h3 className="header">Sistema Integral de Procesos Academicos</h3>
           </div>
           <ul>
