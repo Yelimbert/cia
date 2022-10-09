@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/style.css';
+import '../styles/welcome.css';
 
 
 const Welcome = () => {
@@ -7,7 +7,7 @@ const Welcome = () => {
     <div className="container">
       <div class="header-bar">
         <div class="buttons">
-          <button class="button-login">Log in</button>
+          <button class="button-login"> <a href="/login">Log in</a></button>
         </div>
       </div>
       <div class="page">
@@ -17,7 +17,7 @@ const Welcome = () => {
       </div>
       <div class="texto-bienvenida">
         <h1 class="bienvenido-text">Texto de bienvenida</h1>
-        <div class="bienvenido-underbar"></div>
+        
         <p class="text">
           Bienvenido a su Sistema integral de procesos academicos.
           SIPA es la plataforma que eliminará sus dolores de cabeza,
