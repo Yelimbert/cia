@@ -46,6 +46,18 @@ app.get('/login', (req, res)=> {
     //res.json({message: "no entro"})
 })
 
+app.get('/dashboard', (req, res)=> {
+    db.connect(() => {
+        db.query("SELECT * FROM dashboard WHERE id = 2", (err,result) =>{
+           if(err){
+               console.log(err)
+           }
+            res.json({message : result})
+        })
+    })
+    //res.json({message: "no entro"})
+})
+
 app.listen(3001, () => {
     console.log("running server");
 });

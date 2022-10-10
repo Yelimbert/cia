@@ -3,6 +3,7 @@ import '../styles/loggedPage.css';
 import intecLogo from '../intec_logoT.png';
 
 const UserLoggedPage = () => {
+  
   return (
     <div className="contenedor-principal">
       <div className="contenedor-menu">
