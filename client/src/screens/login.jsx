@@ -3,7 +3,7 @@ import '../styles/styles.css';
 import logoIntec from '../intec_logoT.png';
 import logoIntecGrande from '../intecImg.jpg';
 import { useState } from 'react';
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const LoginScreen = () => {
@@ -18,7 +18,6 @@ const LoginScreen = () => {
   const login = async () => {
     
 
-   
     const answer = await fetch("http://localhost:3001/login", 
     { 
       method: "POST", 
@@ -73,4 +72,4 @@ const LoginScreen = () => {
   );
 }
 
-export default LoginScreen
+export default LoginScreen;
