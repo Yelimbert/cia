@@ -16,7 +16,7 @@ const db = mysql.createConnection({
     database: "cia",
 });
 
-app.post('/login', (req, res)=> {
+/*app.post('/login', (req, res)=> {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -35,6 +35,15 @@ app.post('/login', (req, res)=> {
             }
         }
     );
+})*/
+
+app.get('/login', (req, res)=> {
+    db.connect(() => {
+        db.query("SELECT * FROM estudiante", (err,result) =>{
+           res.json({message : result})
+        })
+    })
+    //res.json({message: "no entro"})
 })
 
 app.listen(3001, () => {
