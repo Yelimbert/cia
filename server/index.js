@@ -16,36 +16,6 @@ const db = mysql.createConnection({
     database: "cia",
 });
 
-/*app.post('/login', (req, res)=> {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    db.query(
-        "SELECT * FROM id WHERE username = ? AND password = ?",
-        [username, password],
-        (err, result) => {
-            if(err) {
-                res.send({err: err})
-            }
-
-            else if(result) {
-                res.send(result)
-            } else {
-                res.send({message: "Usuario/contrasena incorrecta!"})
-            }
-        }
-    );
-})*/
-
-app.get('/login', (req, res)=> {
-    db.connect(() => {
-        db.query("SELECT * FROM estudiante", (err,result) =>{
-           res.json({message : result})
-        })
-    })
-    //res.json({message: "no entro"})
-})
-
 app.get('/dashboard', (req, res)=> {
     db.connect(() => {
         db.query("SELECT * FROM dashboard WHERE id = 2", (err,result) =>{
@@ -53,6 +23,46 @@ app.get('/dashboard', (req, res)=> {
                console.log(err)
            }
             res.json({message : result})
+        })
+    })
+    //res.json({message: "no entro"})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.post('/login', (req, res)=> {
+    user = req.body.username;
+    pass = req.body.password;
+    db.connect(() => {
+        db.query("SELECT * FROM estudiante WHERE ID_est = " + "'" +user + "'" +" AND password = " + "'" + pass + "'",
+        (err,result) =>{
+            if(err){
+                console.log(err);
+            }
+            else{
+                res.json({message : result})
+            }
+
         })
     })
     //res.json({message: "no entro"})
