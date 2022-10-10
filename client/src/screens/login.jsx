@@ -3,6 +3,7 @@ import '../styles/styles.css';
 import logoIntec from '../intec_logoT.png';
 import logoIntecGrande from '../intecImg.jpg';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const LoginScreen = () => {
 
@@ -11,12 +12,29 @@ const LoginScreen = () => {
     password:"",
   })
 
+  let nav = useNavigate();
 
   const login = async () => {
-    const answer = await fetch("/login")
-    const answerJson = await answer.json()
-    console.log(answerJson);
-  }
+
+    const answer = await fetch("http://localhost:3001/login", 
+    { 
+      method: "POST", 
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    });
+    const answerJson = await answer.json();
+     console.log(answerJson.message.length);
+     if(answerJson.message.length !== 0){
+        return nav('/');
+     }
+     else{
+      console.log("credenciales invalidas");
+     }
+
+  };
 
 
  
