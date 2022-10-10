@@ -5,6 +5,7 @@ import Welcome from './screens/welcome';
 import UserLoggedPage from './screens/loggedPage';
 import PublicacionCalificacion from './screens/publicacion';
 import Dashboard from './screens/dashboard';
+import SeleccionAsignatura from './screens/seleccion';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='publicacion' element={<PublicacionCalificacion asignatura="Aseguramiento de la calidad del software" 
           id="1099454" estudiante="Yelimbert Javier" calificacion="99" opcion="Publicar"/>}></Route>
           <Route path='dashboard' element={<Dashboard/>}></Route>
+          <Route path='seleccion' element={<SeleccionAsignatura/>}></Route>
         </Routes>
       </Router>
       
