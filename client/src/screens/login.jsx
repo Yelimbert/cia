@@ -3,25 +3,44 @@ import '../styles/styles.css';
 import logoIntec from '../intec_logoT.png';
 import logoIntecGrande from '../intecImg.jpg';
 import { useState } from 'react';
-import Axios from 'axios';
+import { Link, Navigate, useNavigate } from "react-router-dom";
+
 
 const LoginScreen = () => {
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [credentials, setcredentials] = useState({
+    username: "",
+    password: ""
+  });
 
+  let nav = useNavigate(); 
 
-  const login = () => {
-    Axios.post("http://localhost:3001/login", {
-      username: username,
-      password: password,
-    }).then((response) => {
-      console.log(response);
+  const login = async () => {
+    
+
+   
+    const answer = await fetch("http://localhost:3001/login", 
+    { 
+      method: "POST", 
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
     });
+    const answerJson = await answer.json();
+     console.log(answerJson.message.length);
+     if(answerJson.message.length !== 0){
+        return nav('/');
+     }
+     else{
+      console.log("credenciales invalidas");
+     }
+    
   };
 
 
- 
+
   return (
     <div className="main_container">
       <div className="main_image_container">
@@ -31,16 +50,22 @@ const LoginScreen = () => {
         <div className="image-container">
           <img src={logoIntec} className="intec_logo" alt="" />
         </div>
-        <input type="email" className="input_email" placeholder="ID" 
+        <input type="email" className="input_email" placeholder="ID"
           onChange={(e) => {
-            setUsername(e.target.value);
+            setcredentials({
+              ...credentials,
+              username: e.target.value
+            });
           }}
-        id="username" />
-        <input type="password" className="input_email" placeholder="Password" 
+          id="username" />
+        <input type="password" className="input_email" placeholder="Password"
           onChange={(e) => {
-            setPassword(e.target.value);
+            setcredentials({
+              ...credentials,
+              password: e.target.value
+            });
           }}
-        id="password"/>
+          id="password" />
         <button type="button" className="login_button" onClick={login}>Log In</button>
         <button type="button" className="signup_button">Sign Up</button>
       </div>

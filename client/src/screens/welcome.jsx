@@ -5,20 +5,20 @@ import '../styles/welcome.css';
 const Welcome = () => {
   return (
     <div className="container">
-      <div class="header-bar">
-        <div class="buttons">
-          <button class="button-login"> <a href="/login">Log in</a></button>
+      <div className="header-bar">
+        <div className="buttons">
+          <button className="button-login"> <a href="/login">Log in</a></button>
         </div>
       </div>
-      <div class="page">
-        <div class="bienvenido">
+      <div className="page">
+        <div className="bienvenido">
           <h1>Bienvenido!</h1>
         </div>
       </div>
-      <div class="texto-bienvenida">
-        <h1 class="bienvenido-text">Texto de bienvenida</h1>
+      <div className="texto-bienvenida">
+        <h1 className="bienvenido-text">Texto de bienvenida</h1>
         
-        <p class="text">
+        <p className="text">
           Bienvenido a su Sistema integral de procesos academicos.
           SIPA es la plataforma que eliminará sus dolores de cabeza,
           le permite manejar todos sus procesos academicos de una forma facil,

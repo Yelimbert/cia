@@ -12,29 +12,36 @@ app.use(cors());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "10222478",
+    password: "Prueba123",
     database: "cia",
-});
+    port: "3306",
+});  
+
+// db.connect((error) => {
+//     if(error){
+//         throw error
+//     }
+//     else{
+//         console.log("hola")
+//     }
+// })
 
 app.post('/login', (req, res)=> {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    db.query(
-        "SELECT * FROM id WHERE username = ? AND password = ?",
-        [username, password],
-        (err, result) => {
-            if(err) {
-                res.send({err: err})
+    user = req.body.username;
+    pass = req.body.password;
+    db.connect(() => {
+        db.query("SELECT * FROM estudiante WHERE ID_est = " + "'" +user + "'" +" AND password = " + "'" + pass + "'",
+        (err,result) =>{
+            if(err){
+                console.log(err);
             }
-
-            else if(result) {
-                res.send(result)
-            } else {
-                res.send({message: "Usuario/contrasena incorrecta!"})
+            else{
+                res.json({message : result})
             }
-        }
-    );
+            
+        })
+    })
+    //res.json({message: "no entro"})
 })
 
 app.listen(3001, () => {
