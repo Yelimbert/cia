@@ -9,8 +9,12 @@ const PublicacionCalificacion = ({asignatura, id, estudiante, opcion}) => {
             <div className="card-container">
                 <div className="card">
                     <div className="search-bar">
-                        <input type="search" className="search" placeholder="Buscar una materia"></input>
-                        <h2>{asignatura}</h2>
+                        <input type="search" className="search" placeholder="   Buscar"></input>
+                        <h2>
+                            <select id={asignatura}>
+                                <option value=""></option>
+                            </select>
+                            </h2>
                     </div>
                     <table className="content-table">
                         <thead>
@@ -27,16 +31,12 @@ const PublicacionCalificacion = ({asignatura, id, estudiante, opcion}) => {
                                 <td>{estudiante}</td>
                                 <td><input type='number' className="nota"></input></td>
                                 <td>
-                                    <select>
-                                        <option value="Publicar">Publicar</option>
-                                        <option value="Editar">Editar</option>
-                                    </select>
-                                    </td>
+                                    <button className="login_button">Publicar</button>
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot></tfoot>
                     </table>
-                    <button className="publicar">Publicar calificaciones</button>
                 </div>
             </div>
             <div className="footer"></div>
