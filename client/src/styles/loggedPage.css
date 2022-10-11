@@ -1,181 +1,65 @@
-body{
-    min-height: 100vh;
-    min-width: 100vw;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-}
-* {
-    
-}
-
-.header-bar {
-    height: 8vh;
-    width: auto;
-    background-color: #565656;
-}
-
-.header{
-    flex-wrap: nowrap;
-}
-
-.buttons {
-    display: inline-flex;
-    margin-left: 90%;
-    margin-top: 2.5vh;
-}
-
-.main-container{
-    display: flex;
-    min-width: 100vw;
-    min-height: 100vh;
-}
-
-.button-login {
-    background-color: red;
-    color: white;
-    width: 130px;
-    height: 28px;
-    border: none;
-    border-radius: 15px;
-
-}
-
-.button-login:hover {
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-
-
-.bienvenido {
-    position: relative;
-    height: 42vh;
+*
+.contenedor-principal {
+    position: absolute;
+    height: 45%;
     background-image: url("https://www.intec.edu.do/images/news/INTEC-12.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 1;
+    position: absolute;
 }
 
-/* h1 {
-    margin-left: 44.2%;
-    justify-content: center;
-    color: whitesmoke;
-    z-index: 10;
-    font-size: 80px;
-} */
-
-.bienvenido-text1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    text-align: center;
-}
-
-.text1, .bienvenido-text1 {
-    color: black;
-    margin-left: 37.3%;
-    margin-top: 3vh;
-    width: 800px;
+.bienvenido1 {
+    margin: -45%;
+    width: 50%;
 }
 
 .texto-bienvenida1 {
-    background-color: white;
-    height: 50%;
-    
+    justify-content: center;
 }
 
-.menu-container {
-    height: 100vh;
-    display: flex;
-    width: 30vw;
-    /* margin-left: 0%;
-    margin-top: -73vh;
-    position: absolute;
-    height: 100vh;
-    width: 33vh;
+.bienvenido-text1 {
+    color: black;
+}
+
+.menu1 {
     background-color: #565656;
-    color: white; */
-}
-
-.logo-container{
-    display: flex;
-    gap: 10px;
-    align-items: center;  
-}
-
-.menu {
-    margin-top: 4vh;
-    margin-left: 4vh;
-    font-family: Georgia, serif;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-
-.menu-item ul{
-    display: none;
-}
-
-.menu-item ul:hover{
-    display: block;
-}
-.menu-item, .menu-item-hijo {
-    padding: 3px;
-    padding-left: 7px;
-    padding-top: 5px;
-}
-
-.menu-item:hover, .menu-item-hijo:hover, .submenu:hover{
-    cursor: pointer;
-    
-}
-
-.submenu ul{
-    display: none;
-}
-
-.submenu:hover {
-    display: block;
-}
-
-
-i {
-    padding: 7px;
+    width: 20%;
+    height: 100vh;
+    color: whitesmoke;
+    padding: 5px;
 }
 
 .intec {
-    height: 30px;
+    height: 25px;
     width: 60px;
-    /* position: absolute; */
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
-@media only screen and (max-width: 800px) {
-    .header-bar {
-        height: 55px;
-        width: auto;
-    }
-    
-    .buttons {
-        display: inline-flex;
-        margin-left: 70%;
-    }
-    
-    .button-login {
-        width: 110px;
-        height: 35px;
-    }
-
-    .button-login:hover {
-        opacity: 0.7;
-        cursor: pointer;
-    }
-
-    h1 {
-        font-size: 40px;
-        align-items: center;
-    }
+.encabezado {
+    display: flex;
+    margin-left: 80px;
+    margin-top: -30px;
+    margin-bottom: 10px;
 }
+
+.menu-item {
+    padding: 5px;
+    padding-left: 30px;
+}
+
+.menu-item:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.menu-item-hijo {
+    margin-left: 10%;
+}
+
+
+.menu-item-hijo:hover {
+    color: red;
+}
+

@@ -12,7 +12,7 @@ app.use(cors());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "Prueba123",
+    password: "10222478",
     database: "cia",
     port: "3306",
 });  
@@ -25,6 +25,19 @@ const db = mysql.createConnection({
 //         console.log("hola")
 //     }
 // })
+
+app.post('/dashboard', (req, res)=> {
+    id = req.body.id
+    db.connect(() => {
+        db.query("SELECT * FROM dashboard WHERE id = " + "'" + id + "'", (err,result) =>{
+           if(err){
+               console.log(err)
+           }
+            res.json({message : result})
+        })
+    })
+    //res.json({message: "no entro"})
+})
 
 app.post('/login', (req, res)=> {
     user = req.body.username;
@@ -39,6 +52,7 @@ app.post('/login', (req, res)=> {
                 res.json({message : result})
             }
             
+
         })
     })
     //res.json({message: "no entro"})

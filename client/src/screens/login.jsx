@@ -30,7 +30,7 @@ const LoginScreen = () => {
     const answerJson = await answer.json();
      console.log(answerJson.message.length);
      if(answerJson.message.length !== 0){
-        return nav('/');
+        return nav('/dashboard/'+ credentials.username);
      }
      else{
       console.log("credenciales invalidas");
